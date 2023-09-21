@@ -14,9 +14,6 @@ const CartIcon = () => {
     useCartStore.persist.rehydrate();
   }, []);
 
-  useEffect(() => {
-    useCartStore.persist.rehydrate();
-  }, []);
   return (
     <Link href={session?.user.isAdmin ? "/add" : "/cart"}>
       <div className="flex items-center gap-4">
