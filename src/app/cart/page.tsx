@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const CartPage = () => {
   const { products, totalItems, totalPrice, removeFromCart } = useCartStore();
@@ -18,6 +19,7 @@ const CartPage = () => {
   const handleCheckout = async () => {
     if (!session) {
       router.push("/");
+      toast.error("You need to login to checkout");
     } else {
       try {
         const res = await fetch("http://localhost:3000/api/orders", {
