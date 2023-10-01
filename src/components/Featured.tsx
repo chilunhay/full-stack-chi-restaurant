@@ -50,7 +50,7 @@ const Featured = async () => {
                 href={`/product/${item.id}`}
                 className="bg-red-500 text-white p-2 rounded-md"
               >
-                Add to Cart
+                Product Detail
               </Link>
             </div>
           </div>
