@@ -34,13 +34,13 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
       )}
       {/* TEXT CONTAINER */}
       <div className="h-1/2 flex flex-col gap-4 md:h-[70%] md:justify-center md:gap-6 xl:gap-8">
-        <h1 className="text-3xl font-bold uppercase xl:text-5xl">
-          {singleProduct.title}
+        <h1 className="text-3xl font-bold uppercase">
+          <span>{singleProduct.title}</span>
+          <DeleteButton id={singleProduct.id} />
         </h1>
         <p>{singleProduct.desc}</p>
         <Price product={singleProduct} />
       </div>
-      <DeleteButton id={singleProduct.id} />
     </div>
   );
 };
